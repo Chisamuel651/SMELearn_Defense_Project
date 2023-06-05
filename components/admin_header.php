@@ -14,7 +14,7 @@
 <!-- header section begins here -->
 <header class="header">
     <section class="flex">
-        <a href="dashboard.php" class="logo"> <img class="logo_img" src="../images/logo1.png"> <span>UY1 / SMELearn</span></a>
+        <a href="dashboard.php" class="logo"> <img class="logo_img" src="../images/logo1.png"> <span>UY1 / Tutor</span></a>
 
         <form action="search_page.php" method="post" class="search-form">
             <input type="text" placeholder="search here..." name="search_box" maxlength="100" required>

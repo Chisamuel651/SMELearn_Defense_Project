@@ -101,7 +101,7 @@
     <!-- register section starts -->
     <section class="form-container">
         <form action="" method="post" enctype="multipart/form-data">
-            <h3>register new</h3>
+            <h3>register as tutor</h3>
             <div class="flex">
                 <div class="col">
                     <p>your name <span>*</span></p>
@@ -109,7 +109,7 @@
 
                     <p>your course <span>*</span></p>
                     <select name="profession" class="box">
-                        <option value="" disabled selected>-- select your profession --</option>
+                        <option value="" disabled selected>-- select your course --</option>
                         <option value="ict300">ICT300</option>
                         <option value="ict302">ict302</option>
                         <option value="ict310">ICT310</option>
