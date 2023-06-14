@@ -11,6 +11,9 @@
         $name = $_POST['name'];
         $name = filter_var($name, FILTER_SANITIZE_STRING);
 
+        $username = $_POST['username'];
+        $username = filter_var($username, FILTER_SANITIZE_STRING);
+
         $email = $_POST['email'];
         $email = filter_var($email, FILTER_SANITIZE_STRING);
 
@@ -23,12 +26,10 @@
         $image = $_FILES['image']['name'];
         $image = filter_var($image, FILTER_SANITIZE_STRING);
         $ext = pathinfo($image, PATHINFO_EXTENSION);
-        // $rename = create_unique_id().'.'.$ext;
-        $rename = $name.'.'.$ext;
+        $rename = create_unique_id().'.'.$ext;
         $image_tmp_name = $_FILES['image']['tmp_name'];
         $image_size = $_FILES['image']['size'];
-        $image_folder = '../uploaded_files/'.$rename;
-        // $tmp_name = filter_var($tmp_name, FILTER_SANITIZE_STRING);
+        $image_folder = 'uploaded_files/'.$rename;
 
         $select_user_email = $conn->prepare("SELECT * FROM `users` WHERE email = ? ");
 
@@ -43,20 +44,20 @@
                 if($image_size > 2000000){
                     $message[] = 'image size is too large';
                 }else{
-                    $insert_user = $conn->prepare("INSERT INTO `users`( name, profession, email, password, image) VALUES (?,?,?,?,?)");
-                    $insert_user->execute([$name, $profession, $email, $pass, $rename]);
+                    $insert_user = $conn->prepare("INSERT INTO `users`( name, username, email, password, image) VALUES (?,?,?,?,?)");
+                    $insert_user->execute([$name, $username, $email, $pass, $rename]);
 
                     move_uploaded_file($image_tmp_name, $image_folder);
 
                     $verify_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ? LIMIT 1");
                     $verify_user->execute([$email, $pass]);
 
-                    $row = $verify_tutor->fetch(PDO::FETCH_ASSOC);
+                    $row = $verify_user->fetch(PDO::FETCH_ASSOC);
 
                     if($insert_user){
                         if($verify_user->rowCount() > 0){
                             setcookie('user_id', $row['id'], time() + 60*60*24*30, '/');
-                            header('location: dashboard.php');
+                            header('location: home.php');
                         }else{
                             $message[] = 'something went wrong!';
                         }
@@ -93,6 +94,9 @@
                     <p>your name <span>*</span></p>
                     <input type="text" class="box" name="name" maxlength="100" placeholder="enter your name" required>
 
+                    <p>your user-name <span>*</span></p>
+                    <input type="text" class="box" name="username" maxlength="100" placeholder="enter your name" required>
+
                     <p>your email <span>*</span></p>
                     <input type="email" class="box" name="email" maxlength="100" placeholder="enter your email" required>
                 </div>
@@ -103,15 +107,14 @@
 
                     <p>confirm your password <span>*</span></p>
                     <input type="password" class="box" name="c_pass" maxlength="100" placeholder="confirm your password" required>
+
+                    <p>select a profile picture <span>*</span></p>
+                    <input type="file" name="image" class="box" required accept="image/*">
                 </div>
             </div>
 
-            <p>select a profile picture <span>*</span></p>
-            <input type="file" name="image" class="box" required accept="image/*">
-
 
             <input type="submit" value="register now" name="submit" class="btn">
-            <p class="link">already have an accoupt? <a href="login.php">login now</a></p>
 
 
         </form>

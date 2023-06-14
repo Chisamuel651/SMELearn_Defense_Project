@@ -894,13 +894,13 @@ section{
 
 .watch-video .content .flex button i{
    color: var(--black);
-   margin-right: 1rem;
+   /* margin-right: 1rem; */
 }
 
 .watch-video .content .flex button{
    background-color: var(--light-bg);
    cursor: pointer;
-   padding: 1rem 2.5rem;
+   padding: 1.5rem 1.5rem;
    font-size: 2rem;
    border-radius: .5rem;
 }
@@ -1229,6 +1229,209 @@ section{
 .form-container .link a:hover{
    color: var(--black);
    text-decoration: underline;
+}
+
+.tutor-profile .details{
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding: 2rem;
+   text-align: center;
+   overflow-x: hidden;
+}
+
+.tutor-profile .details .tutor{
+   margin-bottom: 3rem;
+   text-align: center;
+}
+
+.tutor-profile .details .tutor img{
+   height: 10rem;
+   width: 10rem;
+   border-radius: 50%;
+   object-fit: cover;
+   margin-bottom: .5rem;
+}
+
+.tutor-profile .details .tutor h3{
+   font-size: 2.5rem;
+   color: var(--black);
+   margin: .5rem 0;
+   text-overflow: ellipsis;
+   overflow-x: hidden;
+}
+
+.tutor-profile .details .tutor p{
+   font-size: 1.8rem;
+   color: var(--main-color);
+   padding-bottom: 1rem;
+   text-overflow: ellipsis;
+   overflow-x: hidden;
+}
+
+.tutor-profile .details .tutor span{
+   font-size: 1.8rem;
+   color: var(--light-color);
+   display: block;
+}
+
+.tutor-profile .details .box-container{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+}
+
+.tutor-profile .details .box-container .box{
+   flex: 1 1 26rem;
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   padding: 2rem;
+   text-align: center;
+}
+
+.tutor-profile .details .box-container .box h3{
+   font-size: 2.5rem;
+   color: var(--black);
+   margin-bottom: 0.5rem;
+}
+
+.tutor-profile .details .box-container .box p{
+   padding: 0.5rem 0;
+   font-size: 1.8rem;
+   color: var(--light-color);
+}
+
+.comment-form form{
+   border-radius: .5rem;
+   background-color: var(--white);
+   padding: 2rem;
+}
+
+.comment-form form textarea{
+   width: 100%;
+   border-radius: .5rem;
+   padding: 1.4rem;
+   font-size: 1.8rem;
+   color: var(--black);
+   background-color: var(--light-bg);
+   height: 20rem;
+   resize: none;
+   margin-bottom: 1rem;
+}
+
+.comments .box-container {
+   display: grid;
+   gap: 2.5rem;
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding: 2rem;
+}
+
+.comments .box-container .box .user{
+   display: flex;
+   align-items: center;
+   gap: 1.5rem;
+   padding-bottom: 1rem;
+}
+
+.comments .box-container .box .user img{
+   height: 5rem;
+   width: 5rem;
+   border-radius: 50%;
+   object-fit: cover;
+}
+
+.comments .box-container .box .user h3{
+   font-size: 2rem;
+   color: var(--black);
+   margin-bottom: 0.2rem;
+}
+
+#verify{
+   font-size: 1.8rem;
+   /* background-color: var(--main-color); */
+   color: var(--main-color);
+}
+
+.comments .box-container .box .user .h3 span{
+   line-height: 5;
+   margin-bottom: 12px;
+}
+
+.comments .box-container .box .user span {
+   font-size: 1.5rem;
+   color: var(--light-color);
+}
+
+.comments .box-container .box .comment-box{
+   background-color: var(--light-bg);
+   position: relative;
+   border-radius: .5rem;
+   font-size: 1.7rem;
+   color: var(--black);
+   padding: 1.5rem;
+   margin: .5rem 0;
+   margin-top: 1.5rem;
+   white-space: pre-line;
+}
+
+.comments .box-container .box .comment-box::before{
+   content: '';
+   position: absolute;
+   top: -1.1rem;
+   left: 1.5rem;
+   height: 2rem;
+   width: 2rem;
+   border-radius: .1rem;
+   transform: rotate(45deg);
+   background-color: var(--light-bg);
+}
+
+.comments .box-container .box .comment-content{
+   background-color: var(--black);
+   padding: 1.5rem 2rem;
+   border-radius: .5rem;
+   margin-bottom: 1.5rem;
+   display: flex;
+   gap: 1rem;
+   align-items: center;
+   font-size: 1.7rem;
+   justify-content: space-between;
+}
+
+.comments .box-container .box .comment-content a{
+   margin-top: 0;
+   color: var(--main-color);
+}
+
+.comments .box-container .box .comment-content a:hover{
+   color: var(--white);
+}
+
+.comments .box-container .box .comment-content p{
+   color: var(--white);
+   text-transform: capitalize;
+}
+
+.comment_content{
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.comment_content p{
+   color: var(--black);
+   padding: .5rem 1.4rem;
+   /* background-color: var(--main-color); */
+   border-radius: .5rem;
+   font-size: 1.2rem;
+}
+
+.comment_content a{
+   color: var(--white);
+   padding: .5rem 1.4rem;
+   background-color: var(--main-color);
+   border-radius: .5rem;
+   font-size: 1.2rem;
 }
 
 

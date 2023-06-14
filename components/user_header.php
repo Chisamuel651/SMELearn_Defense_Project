@@ -38,8 +38,8 @@
                 
             ?>
             <img src="uploaded_files/<?= $fetch_profile['image'] ?>" alt="">
-            <h3><?= $fetch_profile['name']; ?> <span><i id="verify" class="fa-solid fa-square-check"></i></span></h3>
-            <span><?= $fetch_profile['profession']; ?></span>
+            <h3><?= $fetch_profile['name']; ?></h3>
+            <span>Student</span>
             <a href="profile.php" class="btn">view profile</a>
             <div class="flex-btn">
                 <a href="login.php" class="option-btn">login</a>
@@ -75,8 +75,8 @@
             
         ?>
         <img src="uploaded_files/<?= $fetch_profile['image'] ?>" alt="">
-        <h3><?= $fetch_profile['name']; ?> <span><i id="verify" class="fa-solid fa-square-check"></i></span></h3>
-        <span><?= $fetch_profile['profession']; ?></span>
+        <h3><?= $fetch_profile['name']; ?></h3>
+        <span>Student</span>
         <a href="profile.php" class="btn">view profile</a>
         
         <!-- <a href="../components/admin_logout.php" onclick="return confirm('logout from this web app?')" class="delete-btn">Logout</a> -->

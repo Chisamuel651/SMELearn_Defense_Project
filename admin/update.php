@@ -52,7 +52,7 @@
         $image = filter_var($image, FILTER_SANITIZE_STRING);
         $ext = pathinfo($image, PATHINFO_EXTENSION);
         // $rename = create_unique_id().'.'.$ext;
-        $rename = $name.'.'.$ext;
+        $rename = create_unique_id().'.'.$ext;
         $image_tmp_name = $_FILES['image']['tmp_name'];
         $image_size = $_FILES['image']['size'];
         $image_folder = '../uploaded_files/'.$rename;

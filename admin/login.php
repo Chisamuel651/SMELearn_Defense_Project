@@ -56,7 +56,7 @@
         }
     ?>
 
-    <!-- register section starts -->
+    <!-- login section starts -->
     <section class="form-container">
         <form class="login" action="" method="post" enctype="multipart/form-data">
             <h3>welcome back!</h3>
@@ -76,7 +76,7 @@
 
         </form>
     </section>
-    <!-- register section ends -->
+    <!-- login section ends -->
 
     <!-- footer section -->
     <script src="../javascript/admin-script.js"></script>
