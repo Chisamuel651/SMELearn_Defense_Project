@@ -50,6 +50,12 @@
                 <p>courses saved: <span><?= $total_bookmark; ?></span> </p>
                 <a href="bookmark.php" class="inline-btn" >view bookmark</a>
             </div>
+
+            <div class="box tutor">
+                <h3 class="title">join a video room</h3>
+                <p>Have a meeting in our plateforme using our online local video room</p>
+                <a href="video-conf/lobby.php" class="inline-btn">get started</a>
+            </div>
             <?php }else{ ?>
             <div class="box" style="text-align: center;">
                 <h3 class="title">login or register</h3>
@@ -84,11 +90,7 @@
                 </div>
             </div>
 
-            <div class="box tutor">
-                <h3 class="title">become a tutor</h3>
-                <p>As a tutor on our online class platform, you can create and manage your own courses, set prices, communicate with students, and access tools to make your courses engaging.</p>
-                <a href="admin/register.php" class="inline-btn">get started</a>
-            </div>
+            
         </div>
     </section>
 

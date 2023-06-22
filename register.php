@@ -31,12 +31,12 @@
         $image_size = $_FILES['image']['size'];
         $image_folder = 'uploaded_files/'.$rename;
 
-        $select_user_email = $conn->prepare("SELECT * FROM `users` WHERE email = ? ");
+        $select_user_email = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND name = ? ");
 
-        $select_user_email->execute([$email]);
+        $select_user_email->execute([$email, $name]);
 
         if($select_user_email->rowCount() > 0){
-            $message[] = 'email is already taken!';
+            $message[] = 'email or name is already taken!';
         }else{
             if($pass != $c_pass){
                 $message[] = 'password do not match';

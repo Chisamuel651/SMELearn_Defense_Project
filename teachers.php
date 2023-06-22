@@ -37,7 +37,7 @@
             <div class="box offer">
                 <h3>start a video call</h3>
                 <p>create a video call room and discuss with your classmates and teachers</p>
-                <a href="#" class="inline-btn">get started</a>
+                <a href="video-conf/lobby.php" class="inline-btn">get started</a>
             </div>
             <?php 
                 $select_tutors = $conn->prepare("SELECT * FROM `tutors`");

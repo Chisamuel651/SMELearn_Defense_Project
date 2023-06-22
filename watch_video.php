@@ -43,23 +43,27 @@
     }
 
     if(isset($_POST['add_comment'])){
-        $comment_box = $_POST['comment_box'];
-        $comment_box = filter_var($comment_box, FILTER_SANITIZE_STRING);
+        if($user_id != ''){
+            $comment_box = $_POST['comment_box'];
+            $comment_box = filter_var($comment_box, FILTER_SANITIZE_STRING);
 
-        $select_content_tutor = $conn->prepare("SELECT * FROM `content` WHERE id = ?");
-        $select_content_tutor->execute([$get_id]);
-        $fetch_content_tutor_id = $select_content_tutor->fetch(PDO::FETCH_ASSOC);
-        $content_tutor_id = $fetch_content_tutor_id['tutor_id'];
+            $select_content_tutor = $conn->prepare("SELECT * FROM `content` WHERE id = ?");
+            $select_content_tutor->execute([$get_id]);
+            $fetch_content_tutor_id = $select_content_tutor->fetch(PDO::FETCH_ASSOC);
+            $content_tutor_id = $fetch_content_tutor_id['tutor_id'];
 
-        $verify_comment = $conn->prepare("SELECT * FROM `comments` WHERE content_id = ? AND user_id = ? AND tutor_id = ? AND comment = ?");
-        $verify_comment->execute([$get_id, $user_id, $content_tutor_id, $comment_box]);
+            $verify_comment = $conn->prepare("SELECT * FROM `comments` WHERE content_id = ? AND user_id = ? AND tutor_id = ? AND comment = ?");
+            $verify_comment->execute([$get_id, $user_id, $content_tutor_id, $comment_box]);
 
-        if($verify_comment->rowCount() > 0){
-            $message[] = 'comment already sent!';
+            if($verify_comment->rowCount() > 0){
+                $message[] = 'comment already sent!';
+            }else{
+                $add_comment = $conn->prepare("INSERT INTO `comments`(content_id, user_id, tutor_id,comment) VALUES(?,?,?,?)");
+                $add_comment->execute([$get_id, $user_id, $content_tutor_id, $comment_box]);
+                $message[] = 'comment added!';
+            }
         }else{
-            $add_comment = $conn->prepare("INSERT INTO `comments`(content_id, user_id, tutor_id,comment) VALUES(?,?,?,?)");
-            $add_comment->execute([$get_id, $user_id, $content_tutor_id, $comment_box]);
-            $message[] = 'comment added!';
+            $message[] = 'please login first!';
         }
     }
 

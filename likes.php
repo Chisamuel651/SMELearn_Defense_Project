@@ -46,7 +46,7 @@
         <h1 class="heading">Liked Courses</h1>
         <div class="box-container">
             <?php 
-            $select_likes = $conn->prepare("SELECT * FROM `likes` WHERE user_id");
+            $select_likes = $conn->prepare("SELECT * FROM `likes` WHERE user_id = ?");
             $select_likes->execute([$user_id]);
 
             if($select_likes->rowCount() > 0){

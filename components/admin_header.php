@@ -94,6 +94,7 @@
     <nav class="navbar">
         <a href="dashboard.php"><i class="fas fa-home"></i> <span>home</span> </a>
         <a href="playlists.php"><i class="fas fa-bars-staggered"></i> <span>courses</span> </a>
+        <a href="../admin/admin-video-conf/lobby.php"><i class="fa-solid fa-video"></i> <span>video room</span> </a>
         <a href="contents.php"><i class="fas fa-graduation-cap"></i> <span>contents</span> </a>
         <a href="comments.php"><i class="fas fa-comment"></i> <span>comments</span> </a>
         <a href="../components/admin_logout.php" onclick="return confirm('logout from this web app?')"><i class="fas fa-right-from-bracket"></i><span>Logout</span></a>

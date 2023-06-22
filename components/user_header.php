@@ -95,6 +95,7 @@
         <a href="home.php"><i class="fas fa-home"></i> <span>home</span> </a>
         <a href="about.php"><i class="fa-solid fa-question"></i> <span>about</span> </a>
         <a href="courses.php"><i class="fas fa-graduation-cap"></i> <span>courses</span> </a>
+        <!-- <a href="../video-conf/index.php"><i class="fa-solid fa-video"></i> <span>video room</span> </a> -->
         <a href="teachers.php"><i class="fa-solid fa-chalkboard-user"></i> <span>teachers</span> </a>
         <a href="contact.php"><i class="fa-solid fa-headset"></i> <span>contact</span> </a>
         <!-- <a href="../components/admin_logout.php" onclick="return confirm('logout from this web app?')"><i class="fas fa-right-from-bracket"></i><span>Logout</span></a> -->

@@ -78,8 +78,8 @@
                 <h3>quick links</h3>
                 <p>login or register</p>
                 <div class="flex-btn">
-                    <a href="login.php" class="option-btn">login</a>
-                    <a href="register.php" class="option-btn">register</a>
+                    <a href="../components/admin_logout.php" class="option-btn">logout</a>
+                    <a href="admin-video-conf/lobby.php" class="option-btn">video room</a>
                 </div>
             </div>
         </div>
